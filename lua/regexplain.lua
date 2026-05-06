@@ -1,5 +1,5 @@
 -- main module file
-local module = require("plugin_name.module")
+local module = require("regexplain.module")
 
 ---@class Config
 ---@field opt string Your config option
@@ -23,5 +23,3 @@ end
 M.hello = function()
   return module.my_first_function(M.config.opt)
 end
-
-return M

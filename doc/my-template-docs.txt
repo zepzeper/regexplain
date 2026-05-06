@@ -46,17 +46,17 @@ PLUGIN STRUCTURE ~
 >
     .
     ├── lua
-    │   ├── plugin_name
+    │   ├── regexplain
     │   │   └── module.lua
-    │   └── plugin_name.lua
+    │   └── regexplain.lua
     ├── Makefile
     ├── plugin
-    │   └── plugin_name.lua
+    │   └── regexplain.lua
     ├── README.md
     ├── tests
     │   ├── minimal_init.lua
-    │   └── plugin_name
-    │       └── plugin_name_spec.lua
+    │   └── regexplain
+    │       └── regexplain_spec.lua
 <
 
 ==============================================================================
