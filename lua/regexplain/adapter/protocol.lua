@@ -1,0 +1,39 @@
+--- Regexplain Adapter Protocol
+---
+--- Each adapter is a Lua module that returns a table conforming to this protocol.
+--- Community adapters can be registered via:
+---   require("regexplain.adapter.registry").register("myadapter", myadapter)
+---
+--- Required fields:
+---   name         : string  - unique identifier (e.g., "lua", "pcre", "vim")
+---   display_name : string  - human-readable name (e.g., "Lua Patterns", "PHP PCRE")
+---
+--- Required functions:
+---   parse(pattern, opts) -> tree | nil, err
+---     Parses a regex pattern and returns an explanation tree.
+---     Each node in the tree is a table with:
+---       - type         : string token type (e.g., "literal", "quantifier", "group")
+---       - text         : string the raw text this node represents
+---       - explanation  : string human-readable description
+---       - children     : table[] optional child nodes
+---     The root node should have type="root" and text=pattern.
+---
+---   match(pattern, text, opts) -> result | nil, err
+---     Matches a pattern against text.
+---     Returns a table with:
+---       - matches : table[] array of match objects
+---         Each match has:
+---           - start     : number 1-indexed start position
+---           - end_pos   : number 1-indexed end position (inclusive)
+---           - text      : string the matched text
+---           - groups    : table[] optional capture groups
+---             Each group has:
+---               - name  : string|number group identifier
+---               - start : number
+---               - end_pos : number
+---               - text  : string
+---
+--- Optional fields:
+---   flavors : string[] supported flavor variants (e.g., {"pcre", "pcre2"})
+
+return {}
